@@ -1,0 +1,6 @@
+groq==0.28.0
+pinecone==7.0.2
+pandas==2.3.0
+fastapi==0.115.12
+uvicorn==0.34.3
+Python-dotenv==1.1.0
