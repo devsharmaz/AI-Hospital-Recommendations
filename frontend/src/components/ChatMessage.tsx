@@ -47,7 +47,7 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
         const [, number, title, description] = numberedListMatch;
         currentList.push(
           <li key={`item-${index}`} className="text-gray-800">
-            <span className="font-semibold text-blue-600">{title}</span>
+            <span className="font-semibold text-green-600">{title}</span>
             <span className="text-gray-600">: {description}</span>
           </li>
         );
@@ -128,15 +128,15 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, isTyping = fa
 
   const getMessageStyles = () => {
     if (isSystem) {
-      return 'bg-gray-100 text-gray-600 text-center text-sm py-2 px-4 rounded-full mx-auto max-w-xs';
+      return 'bg-green-50 text-green-700 text-center text-sm py-2 px-4 rounded-full mx-auto max-w-xs border border-green-200';
     }
     if (isUser) {
-      return 'bg-blue-600 text-white ml-auto max-w-xs lg:max-w-md';
+      return 'bg-green-600 text-white ml-auto max-w-xs lg:max-w-md';
     }
     if (isError) {
       return 'bg-red-50 text-red-700 border border-red-200 max-w-xs lg:max-w-md';
     }
-    return 'bg-white text-gray-800 border border-gray-200 shadow-sm max-w-lg lg:max-w-2xl';
+    return 'bg-white text-gray-800 border border-green-100 shadow-sm max-w-lg lg:max-w-2xl';
   };
 
   const getContainerStyles = () => {
@@ -158,7 +158,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, isTyping = fa
     <div className={getContainerStyles()}>
       <div className={`${getMessageStyles()} rounded-2xl px-4 py-3 relative group`}>
         <div className="flex items-start gap-3">
-          <div className={`flex-shrink-0 mt-1 ${isUser ? 'text-blue-200' : isError ? 'text-red-500' : 'text-gray-500'}`}>
+          <div className={`flex-shrink-0 mt-1 ${isUser ? 'text-green-200' : isError ? 'text-red-500' : 'text-green-600'}`}>
             {getIcon()}
           </div>
           <div className="flex-1 min-w-0">
@@ -178,7 +178,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, isTyping = fa
                 </div>
               )}
             </div>
-            <div className={`text-xs mt-2 opacity-60 ${isUser ? 'text-blue-200' : 'text-gray-500'}`}>
+            <div className={`text-xs mt-2 opacity-60 ${isUser ? 'text-green-200' : 'text-gray-500'}`}>
               {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </div>
           </div>

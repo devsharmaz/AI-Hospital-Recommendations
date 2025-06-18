@@ -50,16 +50,16 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, 
             value={message}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            placeholder="Type your message here..."
+            placeholder="Ask for hospital recommendations..."
             disabled={disabled || isLoading}
-            className="w-full px-4 py-3 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500 min-h-[48px] max-h-[120px]"
+            className="w-full px-4 py-3 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500 min-h-[48px] max-h-[120px]"
             rows={1}
           />
         </div>
         <button
           type="submit"
           disabled={!message.trim() || isLoading || disabled}
-          className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+          className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
         >
           {isLoading ? (
             <Loader2 size={20} className="animate-spin" />
