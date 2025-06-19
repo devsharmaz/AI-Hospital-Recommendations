@@ -34,6 +34,8 @@ def get_system_prompt(hospital_matadata: list) -> str:
     You should give output in a bullet point format, with each hospital's details on a new line. For example:
 
     * **Hospital Name**: [Name]
+        **Doctor**: [Doctor] ans [Specility]
+        **Doctor**: [Doctor] ans [Specility]
         **City**: [City]
         **State**: [State]
         **District**: [District]

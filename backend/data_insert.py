@@ -13,7 +13,8 @@ def read_and_batch_hospital_csv(file_path):
                 f"{row['Hospital Name']} located in {row['City']}, {row['District']}, {row['State']} "
                 f"has a rating of {row['Rating']} based on {row['Number of Reviews']} reviews. "
                 f"The area has a population density of {row['Density']} people per sq km. "
-                f"Coordinates: ({row['Latitude']}, {row['Longitude']})."
+                f"Coordinates: ({row['Latitude']}, {row['Longitude']}). "
+                f"Doctors Info: {row['info']}"
             )
             records.append({
                 "_id": f"rec{idx}",
@@ -31,7 +32,7 @@ def read_and_batch_hospital_csv(file_path):
 pm = PineconeManager()
 pm.create_index()
 
-file_path = r'..\data\metadata.csv'
+file_path = r'..\data\metadata2.csv'
 
 hospital_records_list = read_and_batch_hospital_csv(file_path)
 
